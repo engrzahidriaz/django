@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section-signup container">
+    <h2>Even Odd Number</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Value1</label>
+        <br>
+        <input type="text" name="Num">
+        <br>
+        <button type="submit"> Even | Odd </button>
+        <br>
+        <label>Output</label>
+        <br>
+        <input type="text" value="{{c}}">
+    </form>
+</section>
+</body>
+</html>
+
+{% endblock %}
