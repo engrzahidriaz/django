@@ -1,8 +1,9 @@
 from django.contrib import admin
-from news.models import News
+from service.models import Service
+
+class ServiceAdmin(admin.ModelAdmin):
+    list_display=('service_icon','service_title','service_dis')
+
+admin.site.register(Service,ServiceAdmin)
 
 # Register your models here.
-class NewsAdmin(admin.ModelAdmin):
-    list_display=('new_title','new_desc','new_image')
-
-admin.site.register(News, NewsAdmin)
