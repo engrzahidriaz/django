@@ -1,8 +1,8 @@
 from django.contrib import admin
-from contact.models import Contact
+from news.models import News
 
 # Register your models here.
-class ContactAdmin(admin.ModelAdmin):
-    list_display=('User_Name','Password','Confirm_Password','Email','Phone','About_Yourself')
+class NewsAdmin(admin.ModelAdmin):
+    list_display=('new_title','new_desc','new_image')
 
-admin.site.register(Contact, ContactAdmin)
+admin.site.register(News, NewsAdmin)

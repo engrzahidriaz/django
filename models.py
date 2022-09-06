@@ -1,11 +1,10 @@
 from django.db import models
+from tinymce.models import HTMLField
+from autoslug import AutoSlugField
 
 # Create your models here.
-
-class Contact(models.Model):
-    User_Name = models.CharField(max_length=50)
-    Password = models.CharField(max_length=50)
-    Confirm_Password = models.CharField(max_length=50)
-    Email = models.CharField(max_length=50)
-    Phone = models.CharField(max_length=50)
-    About_Yourself = models.TextField()
+class News(models.Model):
+    new_title = models.CharField(max_length=100)
+    new_desc = HTMLField()
+    new_image = models.FileField(upload_to='news/',max_length=250, null=True,default=None ) 
+    new_slug = AutoSlugField(populate_from='new_title',unique=True,null=True,default=None)
